@@ -31,6 +31,8 @@ const SearchBar = () => {
 				window.open(
 					`https://www.imdb.com/title/${searchData[selectedItem].imdbID}`
 				);
+			} else if (e.key === 'Escape') {
+				handleDeleteSearch();
 			}
 		} else {
 			setSelectedItem(-1);
@@ -39,7 +41,6 @@ const SearchBar = () => {
 
 	useEffect(() => {
 		if (search !== '') {
-			// Вставь свой API-ключ вместо 'your_api_key'
 			fetch(`https://www.omdbapi.com/?apikey=2cde4e08&s=${search}`)
 				.then((res) => res.json())
 				.then((data) => {
