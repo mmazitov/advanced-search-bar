@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 import CloseIcon from '@mui/icons-material/Close';
 import SearchIcon from '@mui/icons-material/Search';
+import { Img } from 'react-image';
 
 const SearchBar = () => {
 	const [search, setSearch] = useState('');
@@ -44,6 +45,7 @@ const SearchBar = () => {
 				.then((data) => {
 					if (data.Search) {
 						setSearchData(data.Search);
+						console.log(data);
 					} else {
 						setSearchData([]);
 					}
@@ -85,6 +87,7 @@ const SearchBar = () => {
 							}
 							rel="noreferrer"
 						>
+							<Img src={data.Poster} alt={data.Title} className="poster" />
 							{data.Title} ({data.Year})
 						</a>
 					);

@@ -33,6 +33,11 @@
 	margin-top: 10px;
 	position: absolute;
 	top: 70px;
+	height: 70vh;
+	overflow-y: scroll;
+}
+.search_result:empty {
+	height: 0;
 }
 
 .search_result::-webkit-scrollbar {
@@ -46,7 +51,11 @@
 	font-size: 18px;
 	display: block;
 }
-
+.search_suggestion_line {
+	display: flex;
+	column-gap: 5px;
+	align-items: center;
+}
 .search_suggestion_line:hover {
 	background: rgb(227, 227, 227);
 }
@@ -61,4 +70,8 @@
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+}
+.poster {
+	width: 75px;
+	height: 111px;
 }
